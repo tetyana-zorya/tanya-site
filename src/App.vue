@@ -1,41 +1,23 @@
 <template>
-  <div id="app">
-    <div>
+  <v-app id="app">
+     <app-nav>
       <ToolBar />
-    </div>
-    <router-view/>
-  </div>
+     </app-nav>
+    <app-view>
+      <router-view/>
+    </app-view>
+  </v-app>
 </template>
 
-<script> 
-import ToolBar from '@/components/ToolBar.vue'
-
+<script>
+import ToolBar from '@/components/ToolBar'
 export default {
-  name: 'APP',
+  name: 'App',
   components: {
     ToolBar
+  },
+  data() {
+    return {}
   }
-}
+};
 </script>
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
